@@ -1,0 +1,71 @@
+PASO 1: para iniciar express - npm init (Compltear los datos)
+PASO 2: instalar Express - npm install express (Debe aparecer la carpeta "node_modules")
+PASO 3: Crear un archivo .js (ver app.js)
+PASO 4: Crear un archivo .js (ver cursos.js) y luego exportarlo, este servira como simulacion de una DB 
+PASO 5: Importar el archivo cursos.js en el archivo app.js
+PASO 6: Manejo de rutas - Routing con metodos http
+PASO 7: Ejecutar en la terminal con - node app.js 
+PASO 8: Alternativa => Podemos ejecutar tambien con nodemon en la terminal cmd (command prompt) para que se actualicen los cambios rapidamente - nodemon app.js
+PASO 9: Separar los routers en distintos archivos (en este caso "matematicas.js" y "programacion.js")
+
+
+METODOS http -> POST
+En un archivo index.http realizar la accion POST, En este caso para agregar un nuevo curso de programacion
+
+POST http://localhost:3000/api/cursos/programacion HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 4,
+    "titulo": "Aprende Node.js",
+    "lenguaje": "javascript",
+    "vistas": 77651,
+    "nivel": "basico"
+}
+
+
+METODOS http -> PUT
+En un archivo index.http realizar la accion PUT, En este caso para modificar/Actualizar un curso de programacion
+
+### 
+                                                  el valor 2 representa el id a modificar
+PUT http://localhost:3000/api/cursos/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 2,
+    "titulo": "Python intermedio con proyectos",
+    "lenguaje": "python",
+    "vistas": 71672,
+    "nivel": "intermedio"
+}
+
+
+METODOS http -> PATCH
+En un archivo index.http realizar la accion PATCH, En este caso para modificar solo unas propiedades de un curso de programacion
+NO TODO el cuerpo 
+
+###
+PATCH  http://localhost:3000/api/cursos/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "titulo": "Python con proyectos intermedios",
+    "vistas": 97361
+}
+
+
+METODOS http -> DELETE
+En un archivo index.http realizar la accion DELETE, En este caso para Eliminar un curso de programacion por medio de su "id"
+
+###
+DELETE http://localhost:3000/api/cursos/programacion/1 HTTP/1.1
+Content-Type:  application/json
+
+#No se requiere un cuerpo en solicitudes DELETE
+
+
+
+
+
+
